@@ -11,14 +11,13 @@
       --bg-1:#071021; --bg-2:#0d1220; --accent:#58a6ff; --accent-2:#30d5a8;
       --muted:#9aa5b1; --card:#0f1620;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{box-sizing:border-box; transition:none !important;}
+    html,body{height:100%; margin:0; font-family:'Inter',sans-serif; color:#e6edf3;}
     body{
-      margin:0; font-family:'Inter',sans-serif;
       background: radial-gradient(1200px 600px at 10% 20%, rgba(48,213,168,0.06), transparent 8%),
                   radial-gradient(1000px 500px at 85% 85%, rgba(88,166,255,0.04), transparent 8%),
                   linear-gradient(180deg,var(--bg-1),var(--bg-2));
-      color:#e6edf3; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
     .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 36px;position:sticky;top:0;z-index:40;background:rgba(7,10,18,0.6);backdrop-filter:blur(6px)}
     .brand{font-weight:800;color:var(--accent);font-size:18px}
@@ -26,8 +25,7 @@
     .nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px;padding:8px 10px;border-radius:8px}
     .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.03)}
     .btn{padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#3ee0c1);color:#032020;box-shadow:0 8px 30px rgba(56,140,220,0.08)}
-    .btn-ghost{border:1px solid rgba(255,255,255,0.03);color:var(--muted);background:transparent}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#3ee0c1);color:#032020;box-shadow:none;}
     .hero{display:grid;grid-template-columns:1fr 520px;gap:40px;align-items:center;padding:64px 40px}
     @media(max-width:1000px){.hero{grid-template-columns:1fr;text-align:center;padding:42px 20px} .hero-right{margin-top:18px}}
     .eyebrow{color:var(--muted);font-weight:600;margin-bottom:8px}
@@ -35,24 +33,16 @@
     @media(max-width:1000px){.name{font-size:48px}}
     .subtitle{font-size:26px;color:var(--muted);margin-top:6px}
     .hero-right{display:flex;justify-content:center;align-items:center;position:relative}
-    .profile-wrap{width:400px;height:400px;border-radius:50%;display:grid;place-items:center;
-      background: radial-gradient(circle at 30% 25%, rgba(88,166,255,0.06), transparent 18%),
-                  radial-gradient(circle at 75% 75%, rgba(48,213,168,0.05), transparent 18%);
-      box-shadow: 0 30px 90px rgba(0,0,0,0.6);position:relative; margin:auto;}
+    .profile-wrap{width:400px;height:400px;border-radius:50%;display:grid;place-items:center;background: radial-gradient(circle at 30% 25%, rgba(88,166,255,0.06), transparent 18%), radial-gradient(circle at 75% 75%, rgba(48,213,168,0.05), transparent 18%); margin:auto;}
     @media(max-width:1000px){ .profile-wrap{width:300px;height:300px} }
-    .profile-ring{position:absolute; width:100%; height:100%; border-radius:50%; filter:blur(18px); background: conic-gradient(from 150deg, rgba(88,166,255,0.12), rgba(48,213,168,0.08), transparent 60%); transform:scale(1.06); z-index:1;}
-    .profile-img{width:360px;height:360px;border-radius:50%;object-fit:cover;border:6px solid rgba(10,14,20,0.6);box-shadow:0 10px 40px rgba(0,0,0,0.6);z-index:2}
+    .profile-img{width:360px;height:360px;border-radius:50%;object-fit:cover;border:6px solid rgba(10,14,20,0.6);}
     @media(max-width:1000px){ .profile-img{width:260px;height:260px} }
     .section{padding:48px 40px;max-width:1100px;margin:auto}
     .section h2{color:var(--accent);margin-bottom:12px;font-size:26px}
-    .card{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,0.5);margin-bottom:20px}
-    .meta{color:var(--muted);margin:8px 0;font-weight:600}
-    .job h3{margin:0 0 6px}
+    .card{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;margin-bottom:20px}
     ul{margin:0 0 0 18px;padding:0}
     ul li{margin-bottom:8px;color:var(--muted);line-height:1.5}
     .pill{display:inline-block;background:rgba(255,255,255,0.03);color:#ccc;padding:6px 12px;border-radius:999px;margin:6px 6px 6px 0;font-weight:600}
-    .project{display:block;margin-bottom:16px}
-    .project a{color:var(--accent);font-weight:700}
     .skills-grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
     @media(max-width:900px){.skills-grid{grid-template-columns:1fr}}
     .stat{background:rgba(255,255,255,0.03);padding:14px;border-radius:10px;text-align:center;min-width:100px}
@@ -85,83 +75,26 @@
       <h1 class="name">Vishal Kumar Puri</h1>
       <div class="subtitle">Data Analyst</div>
       <p style="color:var(--muted);max-width:700px;line-height:1.6">
-        I am currently working as a Data Analyst at Wave Infratech, transforming IoT, Historian and API data into dashboards and predictive insights. Alongside this, I am deeply enthusiastic about transitioning into Data Science — driven by curiosity, continuous learning, and a strong desire to build scalable, intelligent solutions that solve real-world problems.
+        I am currently working as a Data Analyst at Wave Infratech, transforming IoT, Historian and API data into dashboards and predictive insights. Enthusiastic about Data Science, driven by curiosity and building scalable solutions.
       </p>
-      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn btn-primary" href="#projects">Discover Projects</a>
-        <a class="btn btn-primary" href="#experience">View Experience</a>
-      </div>
     </div>
     <aside class="hero-right">
       <div class="profile-wrap">
-        <span class="profile-ring"></span>
-        <img class="profile-img" src="Profile_Pic.png" alt="Profile picture of Vishal Kumar Puri">
+        <img class="profile-img" src="Profile_Pic.png" alt="Profile picture">
       </div>
     </aside>
   </main>
-
-  <section id="about" class="section">
-    <h2>About</h2>
-    <div class="card">
-      <p style="margin:0;line-height:1.6">
-        I am a results-oriented Data Analyst and Automation Engineer with expertise in Python, SQL, Power BI, and machine learning. Experienced in extracting and preprocessing telemetry from IoT sensors and AVEVA Historian, I build modular pipelines for EDA, feature engineering, and predictive modeling. I create interactive dashboards and production-ready microservices that reduce manual reporting, improve anomaly detection, and drive measurable cost savings. Passionate about learning advanced data science methods, I am transitioning into roles that use statistical modeling, deep learning, and scalable analytics to solve high-impact operational problems. I enjoy collaboration, mentoring, and applying insights to improve operational efficiency and sustainability.
-      </p>
-    </div>
-  </section>
-
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-    <!-- Jobs content same as before -->
-    ...
-  </section>
-
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <!-- Projects content same as before -->
-    ...
-  </section>
-
-  <section id="education" class="section">
-    <h2>Education & Achievements</h2>
-    <!-- Education content same as before -->
-    ...
-  </section>
 
   <section id="skills" class="section skills-grid">
     <div class="card">
       <h2>Skills</h2>
       <canvas id="skillsChart" width="700" height="420"></canvas>
     </div>
-    <div class="card">
-      <h2>Soft Skills</h2>
-      <div class="pill">Communication</div><div class="pill">Problem Solving</div><div class="pill">Collaboration</div>
-      <div class="pill">Time Management</div><div class="pill">Leadership</div><div class="pill">Critical Thinking</div><div class="pill">Adaptability</div>
-      <h2 style="margin-top:18px">GitHub Stats</h2>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-        <div class="stat"><div class="num">64</div><div style="color:var(--muted)">Public Repos</div></div>
-        <div class="stat"><div class="num" id="g-stars">—</div><div style="color:var(--muted)">Total Stars</div></div>
-        <div class="stat"><div class="num" id="g-forks">—</div><div style="color:var(--muted)">Total Forks</div></div>
-        <div class="stat"><div class="num" id="g-toplang">—</div><div style="color:var(--muted)">Top Language</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>📍 Delhi, India</p>
-      <p>✉ <a href="mailto:vpuri4055@gmail.com">vpuri4055@gmail.com</a></p>
-      <p>📞 9507368380</p>
-      <p>
-        <a href="https://www.linkedin.com/in/vishal-kumar-puri-846ba5288" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/vviiishu" target="_blank">GitHub</a> |
-        <a href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank">Novypro</a>
-      </p>
-    </div>
   </section>
 
   <footer>© 2025 Vishal Kumar Puri · Built with ❤ · Hosted on GitHub Pages</footer>
 
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
   <script>
@@ -183,41 +116,28 @@
         }]
       },
       options: {
-        animation: false,  // <-- disable all animations
+        animation: false,
         indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
-          tooltip: { callbacks: { label: (c) => `${c.parsed.x}%` } },
+          tooltip: { enabled: false },
           datalabels: {
-            anchor: 'end', align: 'end',
-            formatter: (value) => value + '%',
-            color: '#e6edf3', font: { weight: 700 }, offset: 6
+            display: true,
+            anchor: 'end',
+            align: 'end',
+            color: '#e6edf3',
+            font: { weight: 700 },
+            formatter: (value) => value + '%'
           }
         },
         scales: {
           x: { min: 0, max: 100, ticks: { color: '#9aa5b1' }, grid: { color: 'rgba(255,255,255,0.03)' } },
           y: { ticks: { color: '#e6edf3' }, grid: { display: false } }
-        },
-        responsive: true, maintainAspectRatio: false
+        }
       }
     });
-
-    async function loadGitHubStats(username='vviiishu'){
-      try{
-        const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-        const repos = await res.json();
-        let stars=0,forks=0; const langCount={};
-        repos.forEach(r => {
-          stars+=r.stargazers_count||0; forks+=r.forks_count||0;
-          const lang=r.language||'Other'; langCount[lang]=(langCount[lang]||0)+1;
-        });
-        const topLang=Object.keys(langCount).sort((a,b)=>langCount[b]-langCount[a])[0]||'—';
-        document.getElementById('g-stars').textContent=stars;
-        document.getElementById('g-forks').textContent=forks;
-        document.getElementById('g-toplang').textContent=topLang;
-      }catch(e){}
-    }
-    loadGitHubStats();
   </script>
 </body>
 </html>
