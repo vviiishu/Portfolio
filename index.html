@@ -12,207 +12,136 @@
       --muted:#9aa5b1; --card:#0f1620;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0; font-family:'Inter',sans-serif;
       background: radial-gradient(1200px 600px at 10% 20%, rgba(48,213,168,0.06), transparent 8%),
                   radial-gradient(1000px 500px at 85% 85%, rgba(88,166,255,0.04), transparent 8%),
                   linear-gradient(180deg,var(--bg-1),var(--bg-2));
-      color:#e6edf3; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      color:#e6edf3;
     }
-
-    /* Top nav */
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 36px;position:sticky;top:0;background:rgba(7,10,18,0.6)}
-    .brand{font-weight:800;color:var(--accent);font-size:18px}
-    .nav-links{display:flex;gap:12px;align-items:center}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:22px 40px;position:sticky;top:0;z-index:40;background:rgba(13,18,32,0.8);backdrop-filter:blur(6px)}
+    .brand{font-weight:800;color:var(--accent)}
+    .nav-links{display:flex;gap:14px}
     .nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px;padding:8px 10px;border-radius:8px}
-    .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.03)}
-    .btn{padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#3ee0c1);color:#032020;box-shadow:0 8px 30px rgba(56,140,220,0.08)}
-    .btn-ghost{border:1px solid rgba(255,255,255,0.03);color:var(--muted);background:transparent}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 520px;gap:40px;align-items:center;padding:64px 40px}
-    @media(max-width:1000px){.hero{grid-template-columns:1fr;text-align:center;padding:42px 20px} .hero-right{margin-top:18px}}
-    .eyebrow{color:var(--muted);font-weight:600;margin-bottom:8px}
-    .name{font-size:84px;line-height:0.95;font-weight:800;margin:6px 0;background:linear-gradient(90deg,#3fb4ff,#1ed6b8);-webkit-background-clip:text;color:transparent}
-    @media(max-width:1000px){.name{font-size:48px}}
-    .subtitle{font-size:26px;color:var(--muted);margin-top:6px}
-
-    /* Profile big */
-    .hero-right{display:flex;justify-content:center;align-items:center;position:relative}
-    .profile-wrap{width:460px;height:460px;border-radius:50%;display:grid;place-items:center;
-      background: radial-gradient(circle at 30% 25%, rgba(88,166,255,0.06), transparent 18%),
-                  radial-gradient(circle at 75% 75%, rgba(48,213,168,0.05), transparent 18%);
-      box-shadow: 0 30px 90px rgba(0,0,0,0.6);position:relative; margin:auto;}
-    @media(max-width:1000px){ .profile-wrap{width:340px;height:340px} }
-    .profile-ring{position:absolute; width:100%; height:100%; border-radius:50%; filter:blur(18px); background: conic-gradient(from 150deg, rgba(88,166,255,0.12), rgba(48,213,168,0.08), transparent 60%); transform:scale(1.06); z-index:1;}
-    .profile-img{width:420px;height:420px;border-radius:50%;object-fit:cover;border:6px solid rgba(10,14,20,0.6);box-shadow:0 10px 40px rgba(0,0,0,0.6);z-index:2}
-    @media(max-width:1000px){ .profile-img{width:300px;height:300px} }
-
-    /* sections */
-    .section{padding:48px 40px;max-width:1100px;margin:auto}
+    .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.05)}
+    .btn{padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#3ee0c1);color:#032020}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.1);color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;padding:60px 40px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}}
+    .name{font-size:72px;line-height:1.1;font-weight:800;background:linear-gradient(90deg,#3fb4ff,#1ed6b8);-webkit-background-clip:text;color:transparent}
+    .subtitle{font-size:26px;color:var(--muted);margin-top:8px}
+    .profile-wrap{position:relative;width:360px;height:360px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 20%,rgba(88,166,255,0.1),transparent 20%);box-shadow:0 20px 60px rgba(0,0,0,0.6);margin:auto}
+    .profile-img{width:320px;height:320px;border-radius:50%;object-fit:cover;border:6px solid rgba(10,14,20,0.6);box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+    .section{padding:46px 40px;max-width:1100px;margin:auto}
     .section h2{color:var(--accent);margin-bottom:12px;font-size:26px}
-    .card{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,0.5);margin-bottom:20px}
-    .meta{color:var(--muted);margin:8px 0;font-weight:600}
-    .job h3{margin:0 0 6px}
+    .card{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.5);margin-bottom:20px}
+    .job h3{margin:0}
+    .meta{color:var(--muted);margin:6px 0}
     ul{margin:0 0 0 18px;padding:0}
-    ul li{margin-bottom:8px;color:var(--muted);line-height:1.5}
-    .pill{display:inline-block;background:rgba(255,255,255,0.03);color:#ccc;padding:6px 12px;border-radius:999px;margin:6px 6px 6px 0;font-weight:600}
-
-    /* projects */
-    .project{display:block;margin-bottom:16px}
+    ul li{margin-bottom:8px;color:var(--muted)}
+    .project{margin-bottom:18px}
     .project a{color:var(--accent);font-weight:700}
-
-    /* skills */
-    .skills-grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
+    .pill{display:inline-block;background:rgba(255,255,255,0.05);color:#ccc;padding:6px 12px;border-radius:999px;margin:4px;font-weight:600}
+    footer{padding:20px;text-align:center;color:var(--muted);margin-top:40px}
+    .skills-grid{display:grid;grid-template-columns:1fr 400px;gap:20px}
     @media(max-width:900px){.skills-grid{grid-template-columns:1fr}}
-    .stat{background:rgba(255,255,255,0.03);padding:14px;border-radius:10px;text-align:center;min-width:100px}
+    .stat{background:rgba(255,255,255,0.05);padding:14px;border-radius:10px;text-align:center;min-width:100px}
     .stat .num{font-weight:800;font-size:20px}
-
-    /* contact link color - match LinkedIn color (accent) */
-    #contact a{color:var(--accent);text-decoration:none;font-weight:700}
-    #contact a:hover{text-decoration:underline}
-
-    /* footer */
-    footer{padding:24px;text-align:center;color:var(--muted);margin-top:40px}
   </style>
 </head>
 <body>
-  <header class="nav" role="banner">
+  <div class="nav">
     <div class="brand">Vishal Puri</div>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a>
+      <a href="#projects">Projects</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </div>
     <div>
       <a class="btn btn-primary" href="mailto:vpuri4055@gmail.com">Contact</a>
     </div>
-  </header>
+  </div>
 
-  <!-- HERO -->
-  <main id="home" class="hero" role="main">
-    <div class="hero-left">
-      <div class="eyebrow">Hello — I'm</div>
+  <main id="home" class="hero">
+    <div>
       <h1 class="name">Vishal Kumar Puri</h1>
       <div class="subtitle">Data Analyst</div>
-      <p style="color:var(--muted);max-width:700px;line-height:1.6">
-        I am currently working as a Data Analyst at Wave Infratech, transforming IoT, Historian and API data into dashboards and predictive insights. Alongside this, I am deeply enthusiastic about transitioning into Data Science — driven by curiosity, continuous learning, and a strong desire to build scalable, intelligent solutions that solve real-world problems.
-      </p>
-      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+      <p>I am currently working as a Data Analyst at Wave Infratech, transforming IoT, Historian and API data into dashboards and predictive insights. Alongside this, I am deeply enthusiastic about transitioning into Data Science — driven by curiosity, continuous learning, and a strong desire to build scalable, intelligent solutions that solve real-world problems.</p>
+      <div style="margin-top:20px">
         <a class="btn btn-primary" href="#projects">Discover Projects</a>
-        <a class="btn btn-primary" href="#experience">View Experience</a>
+        <a class="btn btn-ghost" href="#experience">View Experience</a>
       </div>
     </div>
-
-    <aside class="hero-right">
-      <div class="profile-wrap">
-        <span class="profile-ring" aria-hidden="true"></span>
-        <img class="profile-img" src="Profile_Pic.png" alt="Profile picture of Vishal Kumar Puri">
-      </div>
-    </aside>
+    <div class="profile-wrap">
+      <img class="profile-img" src="Profile_Pic.png" alt="Vishal Kumar Puri">
+    </div>
   </main>
 
-  <!-- ABOUT -->
   <section id="about" class="section">
     <h2>About</h2>
     <div class="card">
-      <p style="margin:0;line-height:1.6">
-        I am a results-oriented Data Analyst and Automation Engineer with expertise in Python, SQL, Power BI, and machine learning. Experienced in extracting and preprocessing telemetry from IoT sensors and AVEVA Historian, I build modular pipelines for EDA, feature engineering, and predictive modeling. I create interactive dashboards and production-ready microservices that reduce manual reporting, improve anomaly detection, and drive measurable cost savings. Passionate about learning advanced data science methods, I am transitioning into roles that use statistical modeling, deep learning, and scalable analytics to solve high-impact operational problems. I enjoy collaboration, mentoring, and applying insights to improve operational efficiency and sustainability.
-      </p>
+      <p>I am a results-oriented Data Analyst and Automation Engineer with expertise in Python, SQL, Power BI, and machine learning. My experience lies in transforming complex data from IoT sensors, AVEVA Historian, and APIs into actionable insights through analytics pipelines and interactive dashboards. I excel at anomaly detection, predictive modeling, and creating solutions that reduce manual reporting overhead and enhance decision-making speed.</p>
+      <p>With a solid foundation in both software engineering and statistical modeling, I enjoy bridging the gap between raw data and business value. I have delivered impactful projects, such as reducing complaint resolution time by 18%, optimizing electricity usage with IoT data, and deploying ML pipelines that achieved 92% accuracy in real-time anomaly detection. I thrive in environments where innovation and collaboration are key, and I am constantly seeking opportunities to expand my skillset in data science, deep learning, and advanced analytics. My ultimate goal is to transition fully into Data Science roles, applying advanced techniques to solve large-scale industry problems and contribute to building data-driven organizations.</p>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience" class="section">
     <h2>Experience</h2>
     <div class="card job">
       <h3>Data Analyst — Dilbird Pvt Ltd (Wave Group)</h3>
       <div class="meta">Noida · Dec 2024 – Present</div>
       <ul>
-        <li>Analyzed complaint-resolution (TAT) data from the Wave City app; implemented fixes that reduced breach rates and improved resolution time by ~18% in four months.</li>
-        <li>Sourced and cleansed PLC & IoT telemetry across 150+ buildings to audit electricity loads; identified 12% zone-level imbalances and recommended redistribution strategies.</li>
-        <li>Extracted historical telemetry from AVEVA Historian to analyze ₹3.2 Cr electricity spend, uncovering inefficiencies and enabling ~15% annual savings.</li>
-        <li>Built 8+ automated dashboards (Power BI + Python) integrating IoT, API and historian sources to improve anomaly detection and reduce manual reporting errors.</li>
+        <li>Analyzed complaint-resolution data, reducing TAT breaches and improving resolution time by 18%.</li>
+        <li>Audited electricity load of 150+ buildings via IoT sensors, detecting 12% imbalance and optimizing usage.</li>
+        <li>Analyzed ₹3.2 Cr electricity costs via AVEVA Historian, achieving 15% annual savings.</li>
+        <li>Developed 8+ dashboards (Power BI + Python), improving anomaly detection by 25%.</li>
       </ul>
     </div>
-
     <div class="card job">
-      <h3>Data Analyst — M/S Ojas (Vendor for Wave Infratech)</h3>
+      <h3>Data Analyst — M/S Ojas</h3>
       <div class="meta">Gurugram · Apr 2024 – Sep 2024</div>
       <ul>
-        <li>Monitored borewell health across 36 units (7 sectors) using API telemetry; identified inefficiencies in ~22% of units and prioritized maintenance.</li>
-        <li>Implemented scheduled monitoring and visual diagnostics reducing borewell downtime by ~26% and improving water availability in critical zones.</li>
-        <li>Analyzed pump runtime and energy consumption from Historian + Python to optimize maintenance schedules, improving efficiency by ~18%.</li>
-        <li>Delivered 5 automated dashboards and reports, cutting reporting turnaround by ~50% for field teams and supervisors.</li>
+        <li>Monitored borewells in 7 sectors via API, identifying inefficiencies in 22% of units.</li>
+        <li>Implemented monitoring system cutting downtime by 26%.</li>
+        <li>Optimized pump runtime & energy use with Historian + Python, boosting efficiency 18%.</li>
+        <li>Built 5 dashboards, reducing reporting turnaround by 50%.</li>
       </ul>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="card project">
       <h3>RAG-Powered Contextual Chatbot (Groq LLM + LangChain)</h3>
-      <div class="meta">July 2025 · Streamlit · FAISS embeddings</div>
-      <p style="color:var(--muted);margin:8px 0 0;line-height:1.5">
-        Retrieval-Augmented Generation pipeline using LangChain + Groq LLM to answer queries from 20+ PDFs. Document ingestion, chunking, HuggingFace embeddings, FAISS retrieval, and a Streamlit front-end delivering context-aware answers in sub-2s.
-      </p>
-      <p style="margin-top:8px"><a href="https://github.com/vviiishu/Langchain-and-RAG-Projects" target="_blank">View on GitHub</a></p>
+      <p>Built a RAG chatbot with LangChain & Groq LLM, answering queries from 20+ PDFs in under 2s. Implemented FAISS embeddings, HuggingFace models, and Streamlit UI.</p>
+      <a href="https://github.com/vviiishu/Langchain-and-RAG-Projects" target="_blank">View on GitHub</a>
     </div>
-
     <div class="card project">
       <h3>Automated Sensor Anomaly Detection</h3>
-      <div class="meta">Oct 2023 · MongoDB · 92% accuracy</div>
-      <p style="color:var(--muted);margin:8px 0 0;line-height:1.5">
-        Modular ML pipeline detecting faulty sensor behavior across 500k+ records; feature engineering on time-series, classifiers for anomaly detection, and real-time inference integration that reduced manual triage by ~35%.
-      </p>
-      <p style="margin-top:8px"><a href="https://github.com/vviiishu/Sensor-Fault-Detection" target="_blank">View on GitHub</a></p>
+      <p>Developed ML pipeline for 500k+ MongoDB sensor records, achieving 92% accuracy and real-time fault detection across 50+ IoT nodes.</p>
+      <a href="https://github.com/vviiishu/Sensor-Fault-Detection" target="_blank">View on GitHub</a>
     </div>
-
     <div class="card project">
       <h3>Diamond Price Prediction</h3>
-      <div class="meta">Regression pipeline · Flask app · model automation</div>
-      <p style="color:var(--muted);margin:8px 0 0;line-height:1.5">
-        End-to-end regression project: EDA, feature engineering, model selection, evaluation and productionization via a Flask microservice with model versioning and CI-ready training scripts.
-      </p>
-      <p style="margin-top:8px"><a href="https://github.com/vviiishu/Diamond-Price-Prediction" target="_blank">View on GitHub</a></p>
+      <p>End-to-end ML project predicting diamond prices using regression, EDA, feature engineering, and a Flask app for automated training & prediction.</p>
+      <a href="https://github.com/vviiishu/Diamond-Price-Prediction" target="_blank">View on GitHub</a>
     </div>
-
     <div class="card project">
       <h3>Road Accident Analysis Dashboard</h3>
-      <div class="meta">Interactive dashboards · Novypro</div>
-      <p style="color:var(--muted);margin:8px 0 0;line-height:1.5">
-        Interactive dashboard with maps, temporal trends, hotspot detection and KPIs to help stakeholders prioritize road safety interventions.
-      </p>
-      <p style="margin-top:8px">
-        <a href="https://www.novypro.com/profile_projects/vishalkumar-puri?Popup=memberProject&Data=1704122356743x542152386583536900" target="_blank">View project on Novypro</a>
-      </p>
+      <p>Interactive Power BI dashboard visualizing accident trends, hotspots, and KPIs for improving road safety.</p>
+      <a href="https://www.novypro.com/project/road-accident-analysis" target="_blank">View on Novypro</a>
     </div>
-
     <div class="card project">
       <h3>Pizza Sales Dashboard</h3>
-      <div class="meta">Interactive dashboards · Novypro</div>
-      <p style="color:var(--muted);margin:8px 0 0;line-height:1.5">
-        Sales performance dashboard showing product segmentation, time-based trends and actionable insights to optimize promotions and inventory.
-      </p>
-      <p style="margin-top:8px">
-        <a href="https://www.novypro.com/profile_projects/vishalkumar-puri?Popup=memberProject&Data=1703947848175x459853784979601600" target="_blank">View project on Novypro</a>
-      </p>
+      <p>Dashboard project showcasing sales performance, customer insights, and product trends for better decision-making.</p>
+      <a href="https://www.novypro.com/project/pizza-sales-dashboard" target="_blank">View on Novypro</a>
     </div>
-
-    <div style="text-align:right;display:flex;gap:12px;justify-content:flex-end;margin-top:12px">
+    <div style="text-align:right;display:flex;gap:12px;justify-content:flex-end">
       <a class="btn btn-primary" href="https://github.com/vviiishu?tab=repositories" target="_blank">See more GitHub Projects</a>
-      <a class="btn btn-primary" href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank">See more Dashboards</a>
+      <a class="btn btn-ghost" href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank">See more Dashboards</a>
     </div>
   </section>
 
-  <!-- EDUCATION & ACHIEVEMENTS -->
   <section id="education" class="section">
     <h2>Education & Achievements</h2>
     <div class="card">
@@ -228,81 +157,47 @@
       <div class="meta">DAV Public School · 2015 · CGPA: 10/10</div>
     </div>
     <div class="card">
-      <div class="pill">Data Analyst Trainee — Medtoureasy</div>
-      <div class="pill">Data Analytics Course — PW</div>
       <div class="pill">Google Data Analytics Professional Certificate</div>
-      <div class="pill">Database & SQL for Data Science with Python — IBM</div>
+      <div class="pill">Database and SQL for Data Science with Python (IBM)</div>
       <div class="pill">Gold Medal — NPTEL Certification</div>
       <div class="pill">IIT Roorkee Soft Skills — Top 1%</div>
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills" class="section skills-grid">
     <div class="card">
       <h2>Skills</h2>
-      <canvas id="skillsChart" width="700" height="420" aria-label="Skills chart"></canvas>
+      <canvas id="skillsChart" width="600" height="400"></canvas>
     </div>
-
     <div class="card">
       <h2>Soft Skills</h2>
-      <div class="pill">Communication</div><div class="pill">Problem Solving</div><div class="pill">Collaboration</div>
-      <div class="pill">Time Management</div><div class="pill">Leadership</div><div class="pill">Critical Thinking</div><div class="pill">Adaptability</div>
-
-      <h2 style="margin-top:18px">GitHub Stats</h2>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-        <div class="stat"><div class="num">64</div><div style="color:var(--muted)">Public Repos</div></div>
-        <div class="stat"><div class="num">—</div><div style="color:var(--muted)">Total Stars</div></div>
-        <div class="stat"><div class="num">—</div><div style="color:var(--muted)">Total Forks</div></div>
-        <div class="stat"><div class="num">—</div><div style="color:var(--muted)">Top Language</div></div>
+      <div class="pill">Communication</div><div class="pill">Problem Solving</div><div class="pill">Collaboration</div><div class="pill">Time Management</div>
+      <h2 style="margin-top:20px">GitHub Stats</h2>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <div class="stat"><div class="num">64</div><div>Repos</div></div>
+        <div class="stat"><div class="num" id="g-stars">—</div><div>Stars</div></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="section">
     <h2>Contact</h2>
     <div class="card">
-      <p style="margin:6px 0">📍 Delhi, India</p>
-      <p style="margin:6px 0">✉ <a href="mailto:vpuri4055@gmail.com">vpuri4055@gmail.com</a></p>
-      <p style="margin:6px 0">📞 9507368380</p>
-      <p style="margin:6px 0">
-        <a href="https://www.linkedin.com/in/vishal-kumar-puri-846ba5288" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/vviiishu" target="_blank">GitHub</a> |
-        <a href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank">Novypro</a>
-      </p>
+      <p>📍 Delhi, India</p>
+      <p>✉ <a href="mailto:vpuri4055@gmail.com">vpuri4055@gmail.com</a></p>
+      <p>📞 9507368380</p>
+      <p><a href="https://www.linkedin.com/in/vishal-kumar-puri-846ba5288" target="_blank">LinkedIn</a> | <a href="https://github.com/vviiishu" target="_blank">GitHub</a> | <a href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank">Novypro</a></p>
     </div>
   </section>
 
   <footer>© 2025 Vishal Kumar Puri · Built with ❤ · Hosted on GitHub Pages</footer>
 
-  <!-- Chart.js (Static chart only) -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    const ctx = document.getElementById('skillsChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Python','SQL','Machine Learning','Data Visualization','Deep Learning','Power BI','LangChain/RAG','AVEVA Historian'],
-        datasets: [{
-          label: 'Skill level (%)',
-          data: [95,92,95,93,92,90,89,88],
-          backgroundColor: 'rgba(88,166,255,0.92)',
-          borderRadius: 8,
-          barThickness: 18
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { min: 0, max: 100, ticks: { color: '#9aa5b1' }, grid: { color: 'rgba(255,255,255,0.03)' } },
-          y: { ticks: { color: '#e6edf3' }, grid: { display: false } }
-        },
-        responsive: true,
-        maintainAspectRatio: false
-      }
-    });
+    const ctx=document.getElementById('skillsChart').getContext('2d');
+    new Chart(ctx,{type:'bar',data:{labels:['Python','SQL','Machine Learning','Data Visualization','Deep Learning','Power BI','LangChain/RAG','AVEVA Historian'],datasets:[{data:[95,92,95,93,92,90,89,88],backgroundColor:'rgba(88,166,255,0.9)',borderRadius:8,barThickness:18}]},options:{indexAxis:'y',scales:{x:{min:0,max:100,ticks:{color:'#9aa5b1'}},y:{ticks:{color:'#e6edf3'}}},plugins:{legend:{display:false}}}});
+    async function loadStats(){try{const r=await fetch('https://api.github.com/users/vviiishu/repos?per_page=100');const repos=await r.json();document.getElementById('g-stars').textContent=repos.reduce((a,c)=>a+(c.stargazers_count||0),0);}catch(e){console.log(e);}}
+    loadStats();
   </script>
 </body>
 </html>
