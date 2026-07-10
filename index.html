@@ -1,242 +1,661 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vishal Kumar Puri — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg-1:#071021; --bg-2:#0d1220; --accent:#58a6ff; --accent-2:#30d5a8;
-      --muted:#9aa5b1; --card:#0f1620;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:'Inter',sans-serif;
-      background: radial-gradient(1200px 600px at 10% 20%, rgba(48,213,168,0.06), transparent 8%),
-                  radial-gradient(1000px 500px at 85% 85%, rgba(88,166,255,0.04), transparent 8%),
-                  linear-gradient(180deg,var(--bg-1),var(--bg-2));
-      color:#e6edf3;
-    }
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:22px 40px;position:sticky;top:0;z-index:40;background:rgba(13,18,32,0.8);backdrop-filter:blur(6px)}
-    .brand{font-weight:800;color:var(--accent)}
-    .nav-links{display:flex;gap:14px}
-    .nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px;padding:8px 10px;border-radius:8px}
-    .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.05)}
-    .btn{padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#3ee0c1);color:#032020}
-    .btn-ghost{border:1px solid rgba(255,255,255,0.1);color:var(--muted)}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;padding:60px 40px}
-    @media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}}
-    .name{font-size:72px;line-height:1.1;font-weight:800;background:linear-gradient(90deg,#3fb4ff,#1ed6b8);-webkit-background-clip:text;color:transparent}
-    .subtitle{font-size:26px;color:var(--muted);margin-top:8px}
-    .profile-wrap{position:relative;width:360px;height:360px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 20%,rgba(88,166,255,0.1),transparent 20%);box-shadow:0 20px 60px rgba(0,0,0,0.6);margin:auto}
-    .profile-img{width:320px;height:320px;border-radius:50%;object-fit:cover;border:6px solid rgba(10,14,20,0.6);box-shadow:0 10px 40px rgba(0,0,0,0.6)}
-    .section{padding:46px 40px;max-width:1100px;margin:auto}
-    .section h2{color:var(--accent);margin-bottom:12px;font-size:26px}
-    .card{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.5);margin-bottom:20px}
-    .job h3{margin:0}
-    .meta{color:var(--muted);margin:6px 0}
-    ul{margin:0 0 0 18px;padding:0}
-    ul li{margin-bottom:8px;color:var(--muted)}
-    .project{margin-bottom:18px}
-    .project a{color:var(--accent);font-weight:700}
-    .pill{display:inline-block;background:rgba(255,255,255,0.05);color:#ccc;padding:6px 12px;border-radius:999px;margin:4px;font-weight:600}
-    footer{padding:20px;text-align:center;color:var(--muted);margin-top:40px}
-    .skills-grid{display:grid;grid-template-columns:1fr 400px;gap:20px}
-    @media(max-width:900px){.skills-grid{grid-template-columns:1fr}}
-    .skill-category{margin-bottom:20px;}
-    .skill-category h3{margin-bottom:10px; color:var(--accent);}
-    .skill-list{display:flex;flex-wrap:wrap;gap:10px;}
-    .skill-item{background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:12px;display:flex;align-items:center;gap:6px;font-weight:600;color:#ccc;font-size:14px;}
-    .skill-item span{font-size:16px;}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Vishal Kumar Puri — ML Engineer &amp; Data Scientist</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #0A0D10;
+    --bg-2:      #0D1114;
+    --panel:     #12161B;
+    --panel-2:   #161B21;
+    --line:      #23282E;
+    --line-soft: #1A1F25;
+    --amber:     #F2A93B;
+    --amber-dim: #8A6423;
+    --teal:      #35C7A0;
+    --text:      #ECEAE4;
+    --muted:     #8B9199;
+    --muted-2:   #5D636B;
+    --radius:    10px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  body{
+    margin:0;
+    font-family:'IBM Plex Sans',sans-serif;
+    background:
+      radial-gradient(900px 500px at 88% 6%, rgba(242,169,59,0.05), transparent 60%),
+      radial-gradient(700px 420px at 6% 90%, rgba(53,199,160,0.04), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit}
+  ::selection{background:rgba(242,169,59,0.25); color:var(--text)}
+
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px; border-radius:4px}
+
+  .display{font-family:'Space Grotesk',sans-serif}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 40px}
+  @media(max-width:640px){.wrap{padding:0 20px}}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,13,16,0.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{
+    max-width:1120px; margin:0 auto; padding:0 40px;
+    height:64px; display:flex; align-items:center; justify-content:space-between;
+  }
+  @media(max-width:640px){.nav-inner{padding:0 20px}}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:600; letter-spacing:0.01em}
+  .brand-dot{width:8px; height:8px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 3px rgba(53,199,160,0.15)}
+  .brand-dot.pulse{animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 3px rgba(53,199,160,0.15); opacity:1}
+    50%{box-shadow:0 0 0 6px rgba(53,199,160,0.05); opacity:0.75}
+  }
+  .nav-links{display:flex; gap:4px}
+  .nav-links a{
+    color:var(--muted); text-decoration:none; font-size:13.5px; font-weight:500;
+    padding:8px 12px; border-radius:6px; transition:color .15s, background .15s;
+  }
+  .nav-links a:hover{color:var(--text); background:var(--panel)}
+  .nav-cta{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:500;
+    color:var(--bg); background:var(--amber); padding:8px 14px; border-radius:6px;
+    text-decoration:none; white-space:nowrap;
+  }
+  .nav-mobile-hide{display:flex}
+  @media(max-width:820px){.nav-mobile-hide{display:none}}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 64px;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:start;
+  }
+  @media(max-width:900px){.hero{grid-template-columns:1fr; padding:56px 0 40px}}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500;
+    color:var(--amber); letter-spacing:0.08em; text-transform:uppercase;
+    display:flex; align-items:center; gap:8px; margin-bottom:18px;
+  }
+  .eyebrow::before{content:''; width:16px; height:1px; background:var(--amber)}
+
+  .hero h1{
+    font-size:52px; line-height:1.08; font-weight:700; margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  @media(max-width:640px){.hero h1{font-size:38px}}
+  .hero .role{
+    font-size:19px; color:var(--muted); font-weight:500; margin:0 0 22px;
+  }
+  .hero .role b{color:var(--text); font-weight:600}
+
+  .hero p.lede{
+    font-size:16px; line-height:1.7; color:#B7BCC3; max-width:54ch; margin:0 0 30px;
+  }
+
+  .hero-ctas{display:flex; gap:12px; flex-wrap:wrap}
+  .btn{
+    font-family:'IBM Plex Sans',sans-serif; font-size:14px; font-weight:600;
+    padding:12px 20px; border-radius:8px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px; transition:transform .15s, border-color .15s, background .15s;
+  }
+  .btn-solid{background:var(--amber); color:#1A1204}
+  .btn-solid:hover{transform:translateY(-1px)}
+  .btn-outline{border:1px solid var(--line); color:var(--text)}
+  .btn-outline:hover{border-color:var(--amber); transform:translateY(-1px)}
+
+  /* live systems panel */
+  .live-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .live-panel-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 18px; border-bottom:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--muted); letter-spacing:0.06em;
+  }
+  .live-tag{color:var(--teal); display:flex; align-items:center; gap:6px}
+  .live-row{
+    padding:16px 18px; border-bottom:1px solid var(--line-soft);
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .live-row:last-child{border-bottom:none}
+  .live-row-top{display:flex; align-items:center; justify-content:space-between; gap:10px}
+  .live-id{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--text); font-weight:500}
+  .live-dot-wrap{display:flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--teal); letter-spacing:0.05em}
+  .live-dot{width:6px; height:6px; border-radius:50%; background:var(--teal); animation:pulse2 2.2s ease-in-out infinite}
+  @keyframes pulse2{0%,100%{opacity:1}50%{opacity:0.35}}
+  .live-metric{font-size:12.5px; color:var(--muted)}
+  .live-metric b{color:var(--amber); font-weight:600; font-family:'IBM Plex Mono',monospace}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:64px 0; border-top:1px solid var(--line-soft)}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:34px; flex-wrap:wrap}
+  .sec-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber);
+    letter-spacing:0.06em; border:1px solid var(--amber-dim); padding:4px 9px; border-radius:5px;
+  }
+  .sec-head h2{font-size:26px; margin:0; font-weight:600; letter-spacing:-0.01em}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 260px; gap:40px}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+  .about-text p{font-size:15.5px; line-height:1.75; color:#BFC4CB; margin:0 0 16px}
+  .stat-stack{display:flex; flex-direction:column; gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden}
+  .stat-row{padding:16px 18px; border-bottom:1px solid var(--line-soft); background:var(--panel)}
+  .stat-row:last-child{border-bottom:none}
+  .stat-num{font-family:'IBM Plex Mono',monospace; font-size:22px; color:var(--amber); font-weight:600}
+  .stat-label{font-size:12px; color:var(--muted); margin-top:2px}
+
+  /* ---------- EXPERIENCE ---------- */
+  .job{
+    border:1px solid var(--line); border-left:3px solid var(--amber);
+    border-radius:var(--radius); padding:24px 26px; margin-bottom:20px; background:var(--panel);
+  }
+  .job.alt{border-left-color:var(--teal)}
+  .job-top{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:4px}
+  .job-title{font-size:17px; font-weight:600}
+  .job-role{color:var(--muted); font-size:13.5px; margin-bottom:14px}
+  .job-meta{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted-2); white-space:nowrap}
+  .job ul{margin:0; padding:0; list-style:none}
+  .job li{
+    position:relative; padding-left:18px; margin-bottom:10px;
+    font-size:14.5px; line-height:1.65; color:#C3C8CE;
+  }
+  .job li::before{content:'—'; position:absolute; left:0; color:var(--muted-2)}
+  .job li b{color:var(--amber); font-weight:600}
+  .job.alt li b{color:var(--teal)}
+
+  /* ---------- FLAGSHIP SYSTEMS ---------- */
+  .sys-card{
+    border:1px solid var(--line); border-radius:var(--radius); background:var(--panel);
+    margin-bottom:18px; overflow:hidden;
+  }
+  .sys-head{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+    padding:16px 22px; background:var(--panel-2); border-bottom:1px solid var(--line);
+  }
+  .sys-id{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--text); font-weight:500}
+  .sys-status{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.08em;
+    color:var(--teal); border:1px solid rgba(53,199,160,0.3); padding:3px 9px; border-radius:20px;
+    display:flex; align-items:center; gap:6px;
+  }
+  .sys-body{padding:22px}
+  .sys-body h3{margin:0 0 10px; font-size:19px; font-weight:600}
+  .sys-body p{margin:0 0 18px; font-size:14.5px; line-height:1.7; color:#BFC4CB}
+  .sys-stats{display:flex; gap:28px; flex-wrap:wrap; margin-bottom:18px}
+  .sys-stat-num{font-family:'IBM Plex Mono',monospace; font-size:24px; color:var(--amber); font-weight:600; line-height:1}
+  .sys-stat-label{font-size:11.5px; color:var(--muted); margin-top:4px}
+  .pill-row{display:flex; gap:8px; flex-wrap:wrap}
+  .pill{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--muted);
+    border:1px solid var(--line); padding:5px 10px; border-radius:20px;
+  }
+
+  /* ---------- PUBLIC PROJECTS ---------- */
+  .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+  @media(max-width:760px){.proj-grid{grid-template-columns:1fr}}
+  .proj-card{
+    border:1px solid var(--line); border-radius:var(--radius); padding:22px; background:var(--panel);
+    transition:border-color .15s, transform .15s; display:flex; flex-direction:column;
+  }
+  .proj-card:hover{border-color:var(--amber-dim); transform:translateY(-2px)}
+  .proj-card h3{margin:0 0 8px; font-size:16px; font-weight:600}
+  .proj-card p{margin:0 0 16px; font-size:13.5px; line-height:1.6; color:var(--muted); flex-grow:1}
+  .proj-link{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--amber);
+    text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  }
+  .proj-link:hover{text-decoration:underline}
+  .see-more{display:flex; gap:12px; justify-content:flex-end; margin-top:22px; flex-wrap:wrap}
+
+  /* ---------- SKILLS ---------- */
+  .skills-layout{display:grid; grid-template-columns:1.4fr 1fr; gap:40px}
+  @media(max-width:900px){.skills-layout{grid-template-columns:1fr}}
+  .skill-cat{margin-bottom:26px}
+  .skill-cat:last-child{margin-bottom:0}
+  .skill-cat h4{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber);
+    letter-spacing:0.06em; text-transform:uppercase; margin:0 0 12px;
+  }
+  .skill-list{display:flex; flex-wrap:wrap; gap:8px}
+  .skill-chip{
+    font-size:13px; color:#C3C8CE; background:var(--panel); border:1px solid var(--line);
+    padding:6px 12px; border-radius:6px;
+  }
+  .soft-panel{border:1px solid var(--line); border-radius:var(--radius); padding:22px; background:var(--panel); height:fit-content}
+  .soft-panel h4{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--teal);
+    letter-spacing:0.06em; text-transform:uppercase; margin:0 0 14px;
+  }
+  .soft-list{display:flex; flex-wrap:wrap; gap:8px}
+  .soft-chip{
+    font-size:12.5px; color:var(--muted); border:1px solid var(--line); padding:5px 11px; border-radius:20px;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px}
+  @media(max-width:700px){.edu-grid{grid-template-columns:1fr}}
+  .edu-card{border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; background:var(--panel)}
+  .edu-card h4{margin:0 0 6px; font-size:14.5px; font-weight:600}
+  .edu-card .meta{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted)}
+  .cert-panel{border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px; background:var(--panel)}
+  .cert-panel h4{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber);
+    letter-spacing:0.06em; text-transform:uppercase; margin:0 0 14px;
+  }
+  .cert-list{display:flex; flex-wrap:wrap; gap:8px}
+
+  /* ---------- CONTACT ---------- */
+  .contact-panel{
+    border:1px solid var(--line); border-radius:var(--radius); background:var(--panel);
+    padding:32px; display:grid; grid-template-columns:1fr 1fr; gap:24px;
+  }
+  @media(max-width:700px){.contact-panel{grid-template-columns:1fr}}
+  .contact-row{display:flex; flex-direction:column; gap:4px}
+  .contact-label{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted-2); letter-spacing:0.06em; text-transform:uppercase}
+  .contact-value{font-size:15px; color:var(--text); text-decoration:none}
+  .contact-value:hover{color:var(--amber)}
+
+  footer{padding:28px 0; text-align:center; color:var(--muted-2); font-size:12.5px; font-family:'IBM Plex Mono',monospace}
+
+  /* scroll reveal */
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease}
+  .reveal.in{opacity:1; transform:translateY(0)}
+</style>
 </head>
 <body>
-  <div class="nav">
-    <div class="brand">Vishal Puri</div>
-    <div class="nav-links">
-      <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a>
-      <a href="#projects">Projects</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
-    </div>
-    <div>
-      <a class="btn btn-primary" href="mailto:vpuri4055@gmail.com">Contact</a>
-    </div>
-  </div>
 
-  <main id="home" class="hero">
-    <div>
-      <h1 class="name">Vishal Kumar Puri</h1>
-      <div class="subtitle">Data Analyst</div>
-      <p>I work as a Data Analyst at Wave Infratech, transforming IoT, Historian, and API data into dashboards and predictive insights. I focus on anomaly detection, predictive modeling, and building ML pipelines that improve operational efficiency. With Python, SQL, Power BI, and data science skills, I create actionable insights from complex datasets. My goal is to transition fully into Data Science roles, delivering scalable, intelligent solutions to solve real-world problems while continuously learning and innovating.</p>
-      <div style="margin-top:20px">
-        <a class="btn btn-primary" href="#projects">Discover Projects</a>
-        <a class="btn btn-primary" href="#experience">View Experience</a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="brand-dot pulse"></span>
+        <span class="mono">V.PURI</span>
       </div>
+      <div class="nav-links nav-mobile-hide">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#systems">Systems</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+      </div>
+      <a class="nav-cta" href="mailto:vpuri4055@gmail.com">CONTACT →</a>
     </div>
-    <div class="profile-wrap">
-      <img class="profile-img" src="Profile_Pic.png" alt="Vishal Kumar Puri">
-    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero" id="home" style="border-top:none">
+      <div>
+        <div class="eyebrow">OPERATOR STATUS: AVAILABLE</div>
+        <h1 class="display">Vishal Kumar Puri</h1>
+        <p class="role"><b>Machine Learning Engineer</b> · Data Scientist · Data Analyst</p>
+        <p class="lede">
+          I build ML systems that run against live infrastructure — SCADA feeds, complaint queues,
+          sensor telemetry — not static datasets. At Wave Infratech, that means taking raw data from
+          AVEVA Historian and API sources through SQL pipelines, statistical and ML models, and
+          production FastAPI services wired directly into real-time operations monitoring.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="#systems">View Flagship Systems</a>
+          <a class="btn btn-outline" href="#experience">See Experience</a>
+        </div>
+      </div>
+
+      <div class="live-panel reveal">
+        <div class="live-panel-head">
+          <span>MONITORED_SYSTEMS.LOG</span>
+          <span class="live-tag"><span class="live-dot"></span>3 LIVE</span>
+        </div>
+        <div class="live-row">
+          <div class="live-row-top">
+            <span class="live-id">SYS.ENERGY_ANALYTICS</span>
+            <span class="live-dot-wrap"><span class="live-dot"></span>LIVE</span>
+          </div>
+          <span class="live-metric">Issue detection speed <b>+25%</b> · 7 sectors monitored</span>
+        </div>
+        <div class="live-row">
+          <div class="live-row-top">
+            <span class="live-id">SYS.SLA_BREACH_PREDICT</span>
+            <span class="live-dot-wrap"><span class="live-dot"></span>LIVE</span>
+          </div>
+          <span class="live-metric">Random Forest <b>0.92 F1</b> · 27K+ complaints scored</span>
+        </div>
+        <div class="live-row">
+          <div class="live-row-top">
+            <span class="live-id">SYS.BOREWELL_EFFICIENCY</span>
+            <span class="live-dot-wrap"><span class="live-dot"></span>LIVE</span>
+          </div>
+          <span class="live-metric">Downtime <b>−26%</b> · 36 borewells, 7 sectors</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="sec-head"><span class="sec-tag">SEC.ABOUT</span><h2 class="display">About</h2></div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a results-oriented engineer working at the intersection of industrial IoT and applied
+            machine learning. Most of my work starts with data that already exists inside a live
+            system — a SCADA historian, a complaints database, a sensor archive — and ends with a
+            model or a rule engine that changes what an operator sees on screen in real time.
+          </p>
+          <p>
+            I'm comfortable owning a problem end-to-end: pulling and cleaning data in SQL, deciding
+            whether the right tool is a statistical baseline or a trained model, shipping it behind a
+            FastAPI service, and working directly with SCADA and field teams to get it in front of the
+            people who act on it. I'm currently deepening that specialization — moving fully into
+            Data Science and ML Engineering roles building scalable, production-grade systems.
+          </p>
+        </div>
+        <div class="stat-stack reveal">
+          <div class="stat-row"><div class="stat-num">3</div><div class="stat-label">Production systems shipped at Wave Infratech</div></div>
+          <div class="stat-row"><div class="stat-num">~35K+</div><div class="stat-label">Records processed across live analytics pipelines</div></div>
+          <div class="stat-row"><div class="stat-num">6</div><div class="stat-label">Public ML / analytics projects on GitHub &amp; Novypro</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="sec-head"><span class="sec-tag">SEC.EXPERIENCE</span><h2 class="display">Experience</h2></div>
+
+      <div class="job reveal">
+        <div class="job-top">
+          <div>
+            <div class="job-title">Wave Infratech Pvt. Ltd.</div>
+            <div class="job-role">Junior Engineer — Applied ML &amp; Data Analytics</div>
+          </div>
+          <div class="job-meta">NOIDA · DEC 2024 — PRESENT</div>
+        </div>
+        <ul>
+          <li>Built a real-time <b>ARIMA + Isolation Forest</b> anomaly detection and forecasting system across <b>7 Wave Smart City sectors</b> via FastAPI, independently taking it from prototype to production and cutting issue detection time by <b>25%</b>.</li>
+          <li>Analyzed citywide electricity cost patterns, uncovering <b>~12% zone-level load imbalance</b> and <b>~15% potential annual savings</b> (~₹5.3 Cr spend reviewed).</li>
+          <li>Designed the <b>Complaint SLA Analytics &amp; Breach Prediction System</b> end-to-end — automating breach tracking for <b>27K+ complaints</b> via SQL/Python and partnering with the SCADA integration team to surface real-time KPIs in AVEVA OMI.</li>
+          <li>Served a <b>Random Forest model (0.92 F1)</b> via FastAPI to predict SLA breach risk at complaint intake, cutting resolution time by <b>18%</b>.</li>
+        </ul>
+      </div>
+
+      <div class="job alt reveal">
+        <div class="job-top">
+          <div>
+            <div class="job-title">M/S Ojas</div>
+            <div class="job-role">Data Analyst Trainee (Analytics Vendor for Wave Infratech)</div>
+          </div>
+          <div class="job-meta">GURUGRAM · APR 2024 — SEP 2024</div>
+        </div>
+        <ul>
+          <li>Engineered a SQL-based analytics pipeline for <b>36 borewells across 7 sectors</b>, using window functions to compute rolling efficiency baselines and peer benchmarks.</li>
+          <li>Flagged <b>~22% inefficient operations</b> and cut average downtime by <b>26%</b> using rule-based SQL logic — no model training required.</li>
+          <li>Connected FastAPI alerts to AVEVA OMI alongside field operations teams, improving water-to-energy efficiency by <b>18%</b> and cutting reporting turnaround by <b>50%</b>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="systems">
+      <div class="sec-head"><span class="sec-tag">SEC.SYSTEMS</span><h2 class="display">Flagship Systems</h2></div>
+
+      <div class="sys-card reveal">
+        <div class="sys-head">
+          <span class="sys-id">SYS.ENERGY_ANALYTICS · SEC01–SEC07</span>
+          <span class="sys-status"><span class="live-dot" style="background:var(--teal)"></span>LIVE</span>
+        </div>
+        <div class="sys-body">
+          <h3>Smart Energy Analytics &amp; Forecasting System</h3>
+          <p>ARIMA-based demand forecasting and multi-method anomaly detection (statistical + Isolation Forest)
+             on real-time sensor data across 102 substations, 7 sectors, and 510 zones — deployed via FastAPI
+             and wired into AVEVA OMI for live operational alerts.</p>
+          <div class="sys-stats">
+            <div><div class="sys-stat-num">25%</div><div class="sys-stat-label">Faster issue detection</div></div>
+            <div><div class="sys-stat-num">~15%</div><div class="sys-stat-label">Projected annual savings</div></div>
+            <div><div class="sys-stat-num">~12%</div><div class="sys-stat-label">Load imbalance surfaced</div></div>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Python</span><span class="pill">SQL</span><span class="pill">ARIMA</span>
+            <span class="pill">Isolation Forest</span><span class="pill">FastAPI</span>
+            <span class="pill">AVEVA Historian</span><span class="pill">AVEVA OMI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sys-card reveal">
+        <div class="sys-head">
+          <span class="sys-id">SYS.SLA_BREACH_PREDICT · 27K+ COMPLAINTS</span>
+          <span class="sys-status"><span class="live-dot" style="background:var(--teal)"></span>LIVE</span>
+        </div>
+        <div class="sys-body">
+          <h3>Complaint SLA Analytics &amp; Breach Prediction System</h3>
+          <p>End-to-end SLA tracking pipeline — SQL/Python analytics feeding a trained Random Forest
+             classifier that scores breach risk at complaint intake, served via FastAPI and integrated
+             into AVEVA OMI for real-time escalation.</p>
+          <div class="sys-stats">
+            <div><div class="sys-stat-num">18%</div><div class="sys-stat-label">Faster resolution time</div></div>
+            <div><div class="sys-stat-num">0.92</div><div class="sys-stat-label">Model F1 score</div></div>
+            <div><div class="sys-stat-num">27K+</div><div class="sys-stat-label">Complaints analyzed</div></div>
+          </div>
+          <div class="pill-row">
+            <span class="pill">Python</span><span class="pill">SQL</span><span class="pill">Random Forest</span>
+            <span class="pill">FastAPI</span><span class="pill">AVEVA OMI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sys-card reveal">
+        <div class="sys-head">
+          <span class="sys-id">SYS.BOREWELL_EFFICIENCY · 36 UNITS</span>
+          <span class="sys-status"><span class="live-dot" style="background:var(--teal)"></span>LIVE</span>
+        </div>
+        <div class="sys-body">
+          <h3>Borewell Efficiency &amp; Downtime Analytics System</h3>
+          <p>SQL-first pipeline using window functions for rolling efficiency baselines and sector-wise
+             peer benchmarking — explainable, rule-based inefficiency and downtime detection with no
+             trained model, delivered via FastAPI into AVEVA OMI.</p>
+          <div class="sys-stats">
+            <div><div class="sys-stat-num">22%</div><div class="sys-stat-label">Inefficiency surfaced</div></div>
+            <div><div class="sys-stat-num">26%</div><div class="sys-stat-label">Downtime reduction</div></div>
+            <div><div class="sys-stat-num">18%</div><div class="sys-stat-label">Efficiency gain</div></div>
+          </div>
+          <div class="pill-row">
+            <span class="pill">SQL Window Functions</span><span class="pill">Python</span>
+            <span class="pill">FastAPI</span><span class="pill">AVEVA OMI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="sec-head"><span class="sec-tag">SEC.PROJECTS</span><h2 class="display">Public Projects</h2></div>
+
+      <div class="proj-grid">
+        <div class="proj-card reveal">
+          <h3>RAG-Powered Contextual Chatbot</h3>
+          <p>Retrieval-Augmented Generation chatbot using LangChain, answering queries from 20+ PDFs in
+             under 2 seconds. FAISS vector retrieval, HuggingFace embeddings, Streamlit UI.</p>
+          <a class="proj-link" href="https://github.com/vviiishu/Langchain-and-RAG-Projects" target="_blank">VIEW ON GITHUB →</a>
+        </div>
+        <div class="proj-card reveal">
+          <h3>Automated Sensor Anomaly Detection</h3>
+          <p>ML pipeline on 500K+ MongoDB sensor records with 589 features, achieving 92% classification
+             accuracy and real-time fault detection via REST API.</p>
+          <a class="proj-link" href="https://github.com/vviiishu/Sensor-Fault-Detection" target="_blank">VIEW ON GITHUB →</a>
+        </div>
+        <div class="proj-card reveal">
+          <h3>Production-Grade Insurance Premium Prediction</h3>
+          <p>Scikit-learn model packaged into a 7-component modular ML pipeline, exposed via FastAPI,
+             containerized with Docker, and deployed live on Render with GitHub Actions CI/CD.</p>
+          <a class="proj-link" href="https://github.com/vviiishu/Insurance-Premium-Prediction-ML-Pipeline" target="_blank">VIEW ON GITHUB →</a>
+        </div>
+        <div class="proj-card reveal">
+          <h3>Diamond Price Prediction</h3>
+          <p>End-to-end ML project predicting diamond prices using regression, EDA, and feature
+             engineering, with a Flask app for automated training and prediction.</p>
+          <a class="proj-link" href="https://github.com/vviiishu/Diamond-Price-Prediction" target="_blank">VIEW ON GITHUB →</a>
+        </div>
+        <div class="proj-card reveal">
+          <h3>Road Accident Analysis Dashboard</h3>
+          <p>Interactive Power BI dashboard visualizing accident trends, hotspots, and KPIs to support
+             road safety decisions.</p>
+          <a class="proj-link" href="https://www.novypro.com/profile_projects/vishalkumar-puri?Popup=memberProject&Data=1704122356743x542152386583536900" target="_blank">VIEW ON NOVYPRO →</a>
+        </div>
+        <div class="proj-card reveal">
+          <h3>Pizza Sales Dashboard</h3>
+          <p>Dashboard analyzing sales performance, customer patterns, and product trends to support
+             operational decision-making.</p>
+          <a class="proj-link" href="https://www.novypro.com/profile_projects/vishalkumar-puri?Popup=memberProject&Data=1703947848175x459853784979601600" target="_blank">VIEW ON NOVYPRO →</a>
+        </div>
+      </div>
+
+      <div class="see-more">
+        <a class="btn btn-outline" href="https://github.com/vviiishu?tab=repositories" target="_blank">More on GitHub</a>
+        <a class="btn btn-outline" href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank">More Dashboards</a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="sec-head"><span class="sec-tag">SEC.SKILLS</span><h2 class="display">Skills</h2></div>
+      <div class="skills-layout">
+        <div class="reveal">
+          <div class="skill-cat">
+            <h4>Machine Learning &amp; AI</h4>
+            <div class="skill-list">
+              <span class="skill-chip">Regression</span><span class="skill-chip">Classification</span>
+              <span class="skill-chip">Clustering</span><span class="skill-chip">Random Forest</span>
+              <span class="skill-chip">Isolation Forest</span><span class="skill-chip">Scikit-learn</span>
+              <span class="skill-chip">XGBoost</span><span class="skill-chip">Deep Learning (ANN/CNN/RNN/LSTM)</span>
+              <span class="skill-chip">Transformers · BERT · GPT</span><span class="skill-chip">TensorFlow</span>
+              <span class="skill-chip">PyTorch</span><span class="skill-chip">NLP</span>
+              <span class="skill-chip">GenAI</span><span class="skill-chip">LangChain</span>
+              <span class="skill-chip">RAG</span><span class="skill-chip">FAISS</span>
+              <span class="skill-chip">Time-Series Analysis</span><span class="skill-chip">Anomaly Detection</span>
+              <span class="skill-chip">Feature Engineering</span><span class="skill-chip">EDA</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <h4>Deployment &amp; Engineering</h4>
+            <div class="skill-list">
+              <span class="skill-chip">FastAPI</span><span class="skill-chip">REST APIs</span>
+              <span class="skill-chip">Docker</span><span class="skill-chip">GitHub Actions (CI/CD)</span>
+              <span class="skill-chip">Render</span><span class="skill-chip">Git</span>
+              <span class="skill-chip">AWS</span><span class="skill-chip">Hadoop · Spark · PySpark</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <h4>Programming &amp; Databases</h4>
+            <div class="skill-list">
+              <span class="skill-chip">Python</span><span class="skill-chip">SQL</span><span class="skill-chip">MySQL</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <h4>Tools &amp; Visualization</h4>
+            <div class="skill-list">
+              <span class="skill-chip">Pandas</span><span class="skill-chip">NumPy</span>
+              <span class="skill-chip">Power BI</span><span class="skill-chip">Tableau</span>
+              <span class="skill-chip">Matplotlib</span><span class="skill-chip">Seaborn</span>
+              <span class="skill-chip">Plotly</span><span class="skill-chip">Advanced Excel</span>
+              <span class="skill-chip">AVEVA Historian</span><span class="skill-chip">AVEVA OMI</span>
+              <span class="skill-chip">Jira</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-panel reveal">
+          <h4>Soft Skills</h4>
+          <div class="soft-list">
+            <span class="soft-chip">Communication</span><span class="soft-chip">Problem Solving</span>
+            <span class="soft-chip">Collaboration</span><span class="soft-chip">Time Management</span>
+            <span class="soft-chip">Adaptability</span><span class="soft-chip">Critical Thinking</span>
+            <span class="soft-chip">Leadership</span><span class="soft-chip">Creativity</span>
+            <span class="soft-chip">Analytical Thinking</span><span class="soft-chip">Decision Making</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="sec-head"><span class="sec-tag">SEC.EDUCATION</span><h2 class="display">Education &amp; Achievements</h2></div>
+
+      <div class="edu-grid reveal">
+        <div class="edu-card">
+          <h4>B.Tech — Mechanical Engineering</h4>
+          <div class="meta">Aryabhata Knowledge University · Jul 2018 – Aug 2022 · CGPA 8.28/10</div>
+        </div>
+        <div class="edu-card">
+          <h4>Class 12th — CBSE</h4>
+          <div class="meta">Mar Gregorios Memorial School, Bokaro · 2017 · 69%</div>
+        </div>
+        <div class="edu-card">
+          <h4>Class 10th — CBSE</h4>
+          <div class="meta">DAV Public School · 2015 · CGPA 10/10</div>
+        </div>
+      </div>
+
+      <div class="cert-panel reveal">
+        <h4>Certifications &amp; Awards</h4>
+        <div class="cert-list">
+          <span class="pill">Google Data Analytics Professional Certificate</span>
+          <span class="pill">Data Analytics Course — Authorized by PW</span>
+          <span class="pill">Database and SQL for Data Science with Python (IBM)</span>
+          <span class="pill">Data Analyst Trainee — MedTourEasy</span>
+          <span class="pill">Gold Medal — NPTEL Certification</span>
+          <span class="pill">IIT Roorkee Soft Skills — Top 1%</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sec-head"><span class="sec-tag">SEC.CONTACT</span><h2 class="display">Contact</h2></div>
+      <div class="contact-panel reveal">
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <a class="contact-value" href="mailto:vpuri4055@gmail.com">vpuri4055@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Phone</span>
+          <a class="contact-value" href="tel:+919507368380">+91 95073 68380</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Delhi, India</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Elsewhere</span>
+          <span class="contact-value">
+            <a href="https://www.linkedin.com/in/vishal-kumar-puri-846ba5288" target="_blank">LinkedIn</a> ·
+            <a href="https://github.com/vviiishu" target="_blank">GitHub</a> ·
+            <a href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank">Novypro</a>
+          </span>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <section id="about" class="section">
-    <h2>About</h2>
-    <div class="card">
-      <p>I am a results-oriented Data Analyst skilled in Python, ML, DL, NLP, Langchain,Big Data,SQL and Power BI. Experienced in turning IoT sensor, Historian, and API data into actionable insights and dashboards. Delivered projects reducing complaint resolution time, optimizing electricity usage, and implementing ML pipelines for anomaly detection. I bridge software engineering with analytics to enhance decision-making, and aim to transition fully into Data Science roles solving large-scale real-world problems.</p>
-    </div>
-  </section>
+  <footer>© 2025 VISHAL KUMAR PURI · BUILT &amp; HOSTED ON GITHUB PAGES</footer>
 
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-    <div class="card job">
-      <h3>Data Analyst — Wave Infratech Pvt Ltd</h3>
-      <div class="meta">Noida · Dec 2024 – Present</div>
-      <ul>
-        <li>Analyzed complaint-resolution data, reducing TAT breaches and improving resolution time by 18%.</li>
-        <li>Audited electricity load of 150+ buildings via IoT sensors, detecting 12% imbalance and optimizing usage.</li>
-        <li>Analyzed ₹3.2 Cr electricity costs via AVEVA Historian, achieving 15% annual savings.</li>
-        <li>Developed 8+ dashboards (Power BI + Python), improving anomaly detection by 25%.</li>
-      </ul>
-    </div>
-    <div class="card job">
-      <h3>Data Analyst — M/S Ojas</h3>
-      <div class="meta">Gurugram · Apr 2024 – Sep 2024</div>
-      <ul>
-        <li>Monitored borewells in 7 sectors via API, identifying inefficiencies in 22% of units.</li>
-        <li>Implemented monitoring system cutting downtime by 26%.</li>
-        <li>Optimized pump runtime & energy use with Historian + Python, boosting efficiency 18%.</li>
-        <li>Built 5 dashboards, reducing reporting turnaround by 50%.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="card project">
-      <h3>RAG-Powered Contextual Chatbot (Groq LLM + LangChain)</h3>
-      <p>Built a RAG chatbot with LangChain & Groq LLM, answering queries from 20+ PDFs in under 2s. Implemented FAISS embeddings, HuggingFace models, and Streamlit UI.</p>
-      <a href="https://github.com/vviiishu/Langchain-and-RAG-Projects" target="_blank">View on GitHub</a>
-    </div>
-    <div class="card project">
-      <h3>Automated Sensor Anomaly Detection</h3>
-      <p>Developed ML pipeline for 500k+ MongoDB sensor records, achieving 92% accuracy and real-time fault detection across 50+ IoT nodes.</p>
-      <a href="https://github.com/vviiishu/Sensor-Fault-Detection" target="_blank">View on GitHub</a>
-    </div>
-    <div class="card project">
-      <h3>Diamond Price Prediction</h3>
-      <p>End-to-end ML project predicting diamond prices using regression, EDA, feature engineering, and a Flask app for automated training & prediction.</p>
-      <a href="https://github.com/vviiishu/Diamond-Price-Prediction" target="_blank">View on GitHub</a>
-    </div>
-    <div class="card project">
-      <h3>Road Accident Analysis Dashboard</h3>
-      <p>Interactive Power BI dashboard visualizing accident trends, hotspots, and KPIs for improving road safety.</p>
-      <a href="https://www.novypro.com/profile_projects/vishalkumar-puri?Popup=memberProject&Data=1704122356743x542152386583536900" target="_blank">View on Novypro</a>
-    </div>
-    <div class="card project">
-      <h3>Pizza Sales Dashboard</h3>
-      <p>Dashboard project showcasing sales performance, customer insights, and product trends for better decision-making.</p>
-      <a href="https://www.novypro.com/profile_projects/vishalkumar-puri?Popup=memberProject&Data=1703947848175x459853784979601600" target="_blank">View on Novypro</a>
-    </div>
-    <div style="text-align:right;display:flex;gap:12px;justify-content:flex-end">
-      <a class="btn btn-primary" href="https://github.com/vviiishu?tab=repositories" target="_blank">See more GitHub Projects</a>
-      <a class="btn btn-primary" href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank">See more Dashboards</a>
-    </div>
-  </section>
-
-  <section id="education" class="section">
-    <h2>Education & Achievements</h2>
-    <div class="card">
-      <h3>B.Tech — Mechanical Engineering</h3>
-      <div class="meta">Aryabhata Knowledge University · Jul 2018 – Aug 2022 · CGPA: 8.28/10</div>
-    </div>
-    <div class="card">
-      <h3>Class 12th — CBSE</h3>
-      <div class="meta">MAR GREGORIOS MEMORIAL School, Bokaro · 2017 · 69%</div>
-    </div>
-    <div class="card">
-      <h3>Class 10th — CBSE</h3>
-      <div class="meta">DAV Public School · 2015 · CGPA: 10/10</div>
-    </div>
-    <div class="card">
-      <div class="pill">Certifications & Awards</div>
-      <ul style="margin-left:0; padding-left:0; list-style:none;">
-        <li class="pill">Data Analyst Trainee — Medtoureasy</li>
-        <li class="pill">Data Analytics Course — Authorized by PW</li>
-        <li class="pill">Google Data Analytics Professional Certificate</li>
-        <li class="pill">Database and SQL for Data Science with Python (IBM)</li>
-        <li class="pill">Gold Medal — NPTEL Certification</li>
-        <li class="pill">IIT Roorkee Soft Skills — Top 1%</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="skills" class="section skills-grid">
-    <div class="card">
-      <h2>Skills</h2>
-      <div class="skill-category">
-        <h3>Programming, Statistics & Data Visualization</h3>
-        <div class="skill-list">
-          <div class="skill-item">🐍 Python</div>
-          <div class="skill-item">📊 Statistics</div>
-          <div class="skill-item">📈 Pandas</div>
-          <div class="skill-item">🔢 NumPy</div>
-          <div class="skill-item">📉 Matplotlib</div>
-          <div class="skill-item">📊 Seaborn</div>
-          <div class="skill-item">📊 Plotly</div>
-          <div class="skill-item">🔍 EDA</div>
-          <div class="skill-item">⚙ Feature Eng.</div>
-          <div class="skill-item">🤖 Scikit-learn</div>
-          <div class="skill-item">💾 SQL</div>
-          <div class="skill-item">📊 Advanced Excel</div>
-          <div class="skill-item">📊 Power BI</div>
-          <div class="skill-item">📊 Tableau</div>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>AI, ML & Big Data</h3>
-        <div class="skill-list">
-          <div class="skill-item">🤖 Machine Learning</div>
-          <div class="skill-item">🧠 Deep Learning (ANN,CNN,RNN,LSTM)</div>
-          <div class="skill-item">🧠 Transformers,BERT,GPT</div>
-          <div class="skill-item">💻 TensorFlow</div>
-          <div class="skill-item">🔥 PyTorch</div>
-          <div class="skill-item">🗣 NLP</div>
-          <div class="skill-item">🪄 GenAI</div>
-          <div class="skill-item">📚 LangChain</div>
-          <div class="skill-item">📦 RAG</div>
-          <div class="skill-item">☁ Hadoop, Spark, PySpark</div>
-          <div class="skill-item">☁ AWS</div>
-          <div class="skill-item">📝 Jira</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>Soft Skills</h2>
-      <div class="pill">Communication</div>
-      <div class="pill">Problem Solving</div>
-      <div class="pill">Collaboration</div>
-      <div class="pill">Time Management</div>
-      <div class="pill">Adaptability</div>
-      <div class="pill">Critical Thinking</div>
-      <div class="pill">Leadership</div>
-      <div class="pill">Creativity</div>
-      <div class="pill">Analytical Thinking</div>
-      <div class="pill">Decision Making</div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>📍 Delhi, India</p>
-      <p>✉ <a style="color:var(--accent);" href="mailto:vpuri4055@gmail.com">vpuri4055@gmail.com</a></p>
-      <p>📞 9507368380</p>
-      <p><a href="https://www.linkedin.com/in/vishal-kumar-puri-846ba5288" target="_blank" style="color:var(--accent);">LinkedIn</a> | <a href="https://github.com/vviiishu" target="_blank" style="color:var(--accent);">GitHub</a> | <a href="https://www.novypro.com/profile_projects/vishalkumar-puri" target="_blank" style="color:var(--accent);">Novypro</a></p>
-    </div>
-  </section>
-
-  <footer>© 2025 Vishal Kumar Puri · Built with ❤ · Hosted on GitHub Pages</footer>
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
-
