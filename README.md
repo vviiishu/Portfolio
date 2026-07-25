@@ -1,95 +1,69 @@
-# 🖥️ Vishal Kumar Puri — Portfolio Website
+# Vishal Kumar Puri — Portfolio
 
-A personal portfolio website for **Vishal Kumar Puri**, Machine Learning Engineer & Data Scientist, built with a custom **SCADA/instrumentation console** aesthetic — reflecting a background in applied ML on live industrial and infrastructure systems.
+A single-page, dependency-free portfolio site for a Machine Learning Engineer / Data Scientist / Data Analyst working on production ML systems for smart-city infrastructure (SCADA telemetry, complaint SLA prediction, energy forecasting).
 
----
+**Live site:** _add your GitHub Pages / Vercel / Netlify link here_
 
-## 📌 Overview
+## Highlights
 
-This is a single-page, static portfolio site showcasing professional experience, flagship production systems, public ML/analytics projects, technical skills, education, and contact details — designed to feel like a live operations monitoring dashboard rather than a generic resume template.
+- **Dark, systems-console aesthetic** — dashboard-style UI (amber/teal on near-black) that mirrors the AVEVA OMI / SCADA environments the projects run against.
+- **Live inference console** — a typing-effect terminal in the hero that cycles real-looking prediction calls (`/predict/sla-breach`, ARIMA forecasts, anomaly flags).
+- **Hand-built SVG data visualizations** for each flagship system:
+  - Forecast-vs-actual load curve with anomaly marker (energy analytics)
+  - Feature-importance bar chart + precision/recall/F1 cards (SLA breach classifier)
+  - Before/after downtime benchmark by sector (borewell efficiency)
+- **Animated, count-up stats** and skill-proficiency bars, all triggered on scroll via `IntersectionObserver`.
+- **Fully responsive**, no build step, no external JS framework — pure HTML/CSS/vanilla JS.
 
-**Live sections:**
-- Hero — role summary + live "monitored systems" status panel
-- About — professional summary and key stats
-- Experience — work history with impact-driven bullet points
-- Flagship Systems — deep dives into production ML systems built at Wave Infratech
-- Public Projects — GitHub/Novypro-linked personal projects
-- Skills — categorized technical and soft skills
-- Education & Achievements — degrees, certifications, awards
-- Contact — direct email, phone, and social links
+## Tech
 
----
+| | |
+|---|---|
+| Markup / styling | HTML5, CSS custom properties, no CSS framework |
+| Fonts | Space Grotesk (display), IBM Plex Sans (body), IBM Plex Mono (data/labels) |
+| Interactivity | Vanilla JS — scroll reveals, count-up counters, animated bars, typewriter console |
+| Charts | Hand-authored inline SVG (no chart library / no external requests) |
+| Hosting | Static — works on GitHub Pages, Netlify, Vercel, or any static host |
 
-## 🎨 Design
-
-- **Theme:** Warm charcoal background with amber and teal accents, inspired by SCADA/industrial monitoring consoles
-- **Typography:** Space Grotesk (display), IBM Plex Sans (body), IBM Plex Mono (technical/monospace elements)
-- **Color palette:**
-  - Background: `#0A0D10`
-  - Amber accent: `#F2A93B`
-  - Teal accent: `#35C7A0`
-  - Text: `#ECEAE4`
-- **Motion:** Subtle pulse animations on "live" status indicators, scroll-triggered fade-in reveals via `IntersectionObserver`
-- **Responsive:** Fully responsive layout with breakpoints for tablet and mobile
-
----
-
-## 🛠️ Tech Stack
-
-- **HTML5** — semantic single-page structure
-- **CSS3** — custom properties (CSS variables), CSS Grid & Flexbox, no external UI framework
-- **Vanilla JavaScript** — scroll-reveal animations via `IntersectionObserver`
-- **Google Fonts** — Space Grotesk, IBM Plex Sans, IBM Plex Mono
-- No build tools or dependencies — pure static HTML/CSS/JS
-
----
-
-## 📂 Repository Structure
+## Project structure
 
 ```
-├── index.html      # Single-file portfolio site (HTML + CSS + JS)
+.
+├── index.html    # everything — markup, styles, and script in one file
 └── README.md
 ```
 
----
+## Running locally
 
-## 🚀 How to Run / Deploy
+No build step required.
 
-**Run locally:**
 ```bash
-git clone https://github.com/vviiishu/portfolio.git
-cd portfolio
-# simply open index.html in a browser
+git clone https://github.com/vviiishu/<repo-name>.git
+cd <repo-name>
+open index.html   # or just double-click it / use a live-server extension
 ```
 
-**Deploy on GitHub Pages:**
+## Deploying to GitHub Pages
+
 1. Push this repo to GitHub.
 2. Go to **Settings → Pages**.
-3. Under **Source**, select the `main` branch and `/ (root)` folder.
-4. Save — your site will be live at `https://vviiishu.github.io/<repo-name>/`.
+3. Under **Source**, select the branch (usually `main`) and root folder.
+4. Save — your site will be live at `https://<username>.github.io/<repo-name>/`.
 
----
+## Customizing
 
-## 🔗 Featured Projects Linked in This Site
+- **Colors / type scale** — all defined as CSS custom properties at the top of `index.html` under `:root`.
+- **Chart data** — the system charts use illustrative SVG coordinates matched to the stated metrics (forecast accuracy, feature importance, downtime reduction). Swap in real values from your trained models if you want the charts to be literally, not just plausibly, accurate.
+- **Avatar** — the "VP" monogram in the hero is a placeholder; replace the inline `<svg>` block with an `<img>` tag pointing to a real headshot if you'd like.
+- **Content** — experience, systems, projects, skills, and education are all plain HTML blocks; no CMS or data file to manage.
 
-- [RAG-Powered Contextual Chatbot](https://github.com/vviiishu/RAG-Chatbot-Llama2-Langchain)
-- [Automated Sensor Anomaly Detection](https://github.com/vviiishu/Sensor-Fault-Detection)
-- [Production-Grade Insurance Premium Prediction](https://github.com/vviiishu/Insurance-Premium-Prediction-ML-Pipeline)
-- [Diamond Price Prediction](https://github.com/vviiishu/Diamond-Price-Prediction)
-- [Road Accident Analysis Dashboard](https://github.com/vviiishu/Road-Accident-Dashboard-Power-BI-SQL)
-- [Pizza Sales Dashboard](https://github.com/vviiishu/Pizza-Sales-Dashboard-Power-Bi-SQL-)
+## Contact
 
----
+- Email: [vpuri4055@gmail.com](mailto:vpuri4055@gmail.com)
+- LinkedIn: [vishal-kumar-puri](https://www.linkedin.com/in/vishal-kumar-puri-846ba5288)
+- GitHub: [@vviiishu](https://github.com/vviiishu)
+- Novypro: [vishalkumar-puri](https://www.novypro.com/profile_projects/vishalkumar-puri)
 
-## 👤 Author
+## License
 
-**Vishal Kumar Puri**
-📍 Delhi, India
-📧 vpuri4055@gmail.com
-🔗 LinkedIn: [Vishal Kumar Puri](https://www.linkedin.com/in/vishal-kumar-puri-846ba5288)
-🔗 GitHub: [vviiishu](https://github.com/vviiishu)
-🔗 Novypro: [Vishal Kumar Puri](https://www.novypro.com/profile_projects/vishalkumar-puri)
-
----
-
-⭐ *If you like the design or find this useful as a portfolio template, consider starring the repo!*
+Personal portfolio — feel free to reference the structure, but please don't reuse the content/copy as your own.
