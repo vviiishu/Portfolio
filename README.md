@@ -2,7 +2,7 @@
 
 A single-page, dependency-free portfolio site for a Machine Learning Engineer / Data Scientist / Data Analyst working on production ML systems for smart-city infrastructure (SCADA telemetry, complaint SLA prediction, energy forecasting).
 
-**Live site:** _add your GitHub Pages / Vercel / Netlify link here_
+**Live site:** https://vviiishu.github.io/Portfolio/
 
 ## Highlights
 
